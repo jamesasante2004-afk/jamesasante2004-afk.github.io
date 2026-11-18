@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odehye James | Electrical and Electronic Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F0F3F1; --ink:#0F2A3A; --muted:#4D6270; --line:#C9D3D0;
+  --gold:#D9A400; --teal:#1F6F6B; --scope:#0B1F2B; --trace:#7CF0C8;
+  --head:"Bricolage Grotesque", "Segoe UI", sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:22px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font:800 1.15rem var(--head);text-decoration:none}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;text-decoration-thickness:3px}
+
+/* hero */
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+h1{font:800 clamp(2.6rem,6vw,4.4rem)/1.02 var(--head);letter-spacing:-0.02em}
+.lede{margin-top:22px;max-width:46ch;color:var(--muted);font-size:1.15rem}
+.actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:500;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* oscilloscope (the one bold element) */
+.scope{background:var(--scope);border-radius:14px;padding:18px;color:#CFE6E0;box-shadow:0 0 0 6px var(--ink)}
+.scope canvas{display:block;width:100%;aspect-ratio:10/8;border-radius:6px;background:#06151e}
+.controls{display:grid;gap:12px;margin-top:16px}
+.controls label{display:grid;grid-template-columns:96px 1fr 72px;align-items:center;gap:12px;font-size:.92rem}
+.controls output{text-align:right;color:var(--trace);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.scope small{display:block;margin-top:12px;color:#8FB0A8;font-size:.82rem}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,3.5vw,2.4rem)/1.1 var(--head);letter-spacing:-0.01em;margin-bottom:34px}
+.projects{list-style:none}
+.project{display:grid;grid-template-columns:1fr 2fr;gap:12px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
+.project:first-child{padding-top:0}
+.project h3{font:500 1.35rem/1.25 var(--head)}
+.project .meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+.project p{max-width:62ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;list-style:none}
+.tags li{border:1px solid var(--teal);color:var(--teal);border-radius:999px;padding:2px 12px;font-size:.85rem}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
+.skills h3{font:500 1.15rem var(--head);margin-bottom:6px}
+.skills p{color:var(--muted)}
+.about{max-width:62ch}
+.about p+p{margin-top:16px}
+.contact p{max-width:52ch;color:var(--muted);margin-bottom:24px}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+
+@media (max-width:860px){
+  .hero{padding:48px 0 56px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .project{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .controls label{grid-template-columns:1fr 64px;}
+  .controls label span{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Odehye James</a>
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>I design circuits and the systems around them.</h1>
+        <p class="lede">Electrical and Electronic Engineering student at the University of Mines and Technology, Tarkwa. I like power electronics, control, and getting hardware to behave.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="scope" role="group" aria-label="Interactive oscilloscope">
+        <canvas id="scope" width="800" height="640" aria-label="Sine wave on an oscilloscope screen" role="img"></canvas>
+        <div class="controls">
+          <label for="freq"><span>Frequency</span>
+            <input id="freq" type="range" min="1" max="20" step="1" value="5">
+            <output id="freqOut">50 Hz</output></label>
+          <label for="amp"><span>Amplitude</span>
+            <input id="amp" type="range" min="0.5" max="3.5" step="0.5" value="2.5">
+            <output id="ampOut">5.0 Vpp</output></label>
+        </div>
+        <small>Screen: 10 ms per division, 1 V per division. Move the sliders.</small>
+      </div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <!-- Replace each project below with your own work -->
+      <ul class="projects">
+        <li class="project">
+          <div><h3>Variable DC power supply</h3><p class="meta">Course project, 2026</p></div>
+          <div>
+            <p>A bench supply with an adjustable 0 to 24 V output and current limiting. I designed the rectifier, the regulator stage, and tested ripple under load.</p>
+            <ul class="tags"><li>Power electronics</li><li>Analog design</li><li>Testing</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div><h3>Substation visit report</h3><p class="meta">Field trip, 2026</p></div>
+          <div>
+            <p>A written study of how a transmission substation is laid out, from the switchyard to the control room, with notes on protection and switching.</p>
+            <ul class="tags"><li>Power systems</li><li>Technical writing</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div><h3>Tic-tac-toe that cannot lose</h3><p class="meta">Personal project, 2026</p></div>
+          <div>
+            <p>A game opponent built with Minimax and alpha-beta pruning, written to understand how search algorithms decide between moves.</p>
+            <ul class="tags"><li>Python</li><li>Algorithms</li></ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Circuits and electronics</h3><p>Analog and digital circuit analysis, power devices, and bench testing.</p></div>
+        <div><h3>Mathematics for engineering</h3><p>Applied mathematics, signals, and modelling of physical systems.</p></div>
+        <div><h3>Programming</h3><p>Python for simulation and problem solving, plus HTML, CSS and JavaScript.</p></div>
+        <div><h3>Communication</h3><p>Lab reports, field reports, and clear documentation of technical work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="about">
+        <p>I study Electrical and Electronic Engineering at UMaT in Tarkwa, where my coursework covers electronics, applied mathematics, and the engineering sciences behind them.</p>
+        <p>I learn best by building, so I turn most topics into something I can run, measure, or break. Write a sentence or two here about what you want to do next.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Open to internships, collaborations, and project work. Send a short message about what you have in mind.</p>
+      <a class="btn primary" href="mailto:you@example.com">Email me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Odehye James. University of Mines and Technology, Tarkwa.</div>
+</footer>
+
+<script>
+(function () {
+  const canvas = document.getElementById('scope');
+  const ctx = canvas.getContext('2d');
+  const freq = document.getElementById('freq');
+  const amp = document.getElementById('amp');
+  const freqOut = document.getElementById('freqOut');
+  const ampOut = document.getElementById('ampOut');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let phase = 0;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(r.width * dpr);
+    canvas.height = Math.round(r.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw();
+  }
+
+  function draw() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    // grid: 10 x 8 divisions
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(124,240,200,0.16)';
+    ctx.beginPath();
+    for (let i = 0; i <= 10; i++) { const x = (w / 10) * i; ctx.moveTo(x, 0); ctx.lineTo(x, h); }
+    for (let j = 0; j <= 8; j++) { const y = (h / 8) * j; ctx.moveTo(0, y); ctx.lineTo(w, y); }
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(124,240,200,0.38)';
+    ctx.beginPath();
+    ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2);
+    ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h);
+    ctx.stroke();
+
+    // trace: the screen spans 100 ms, so cycles on screen = frequency / 10
+    const cycles = Number(freq.value);
+    const peak = Number(amp.value);
+    const pxPerVolt = h / 8;
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#7CF0C8';
+    ctx.shadowColor = '#7CF0C8';
+    ctx.shadowBlur = 8;
+    ctx.beginPath();
+    for (let x = 0; x <= w; x += 2) {
+      const t = x / w;
+      const y = h / 2 - peak * pxPerVolt * Math.sin(2 * Math.PI * cycles * t + phase);
+      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  function readouts() {
+    freqOut.textContent = (Number(freq.value) * 10) + ' Hz';
+    ampOut.textContent = (Number(amp.value) * 2).toFixed(1) + ' Vpp';
+    draw();
+  }
+
+  function loop() {
+    phase -= 0.04;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  freq.addEventListener('input', readouts);
+  amp.addEventListener('input', readouts);
+  window.addEventListener('resize', resize);
+  resize();
+  readouts();
+  if (!reduce) requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
