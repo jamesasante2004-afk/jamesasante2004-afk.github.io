@@ -4,43 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Odehye James | Electrical and Electronic Engineering</title>
+<meta name="description" content="Portfolio of Odehye James, Electrical and Electronic Engineering student at the University of Mines and Technology, Tarkwa.">
+<meta property="og:title" content="Odehye James | Electrical and Electronic Engineering">
+<meta property="og:description" content="Projects in power electronics, power systems and algorithms.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script>
+try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}
+document.documentElement.classList.add('js');
+</script>
 <style>
 :root{
   --paper:#F0F3F1; --ink:#0F2A3A; --muted:#4D6270; --line:#C9D3D0;
   --gold:#D9A400; --teal:#1F6F6B; --scope:#0B1F2B; --trace:#7CF0C8;
-  --head:"Bricolage Grotesque", "Segoe UI", sans-serif;
-  --body:"IBM Plex Sans", "Segoe UI", sans-serif;
+  --head:"Bricolage Grotesque","Segoe UI",sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",sans-serif;
 }
+:root[data-theme="dark"]{--paper:#0E1A22;--ink:#E6EFEC;--muted:#9DB3BC;--line:#24363F;--teal:#5CC4BC}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);transition:background .3s,color .3s}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-/* header */
-header{padding:22px 0;border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;background:var(--paper);padding:16px 0;border-bottom:1px solid var(--line)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .brand{font:800 1.15rem var(--head);text-decoration:none}
-nav{display:flex;gap:22px}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
 nav a{text-decoration:none;color:var(--muted);font-weight:500}
 nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;text-decoration-thickness:3px}
+#theme{font:500 .9rem var(--body);background:none;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:4px 14px;cursor:pointer}
+#theme:hover{border-color:var(--gold)}
 
-/* hero */
 .hero{padding:72px 0 80px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
-h1{font:800 clamp(2.6rem,6vw,4.4rem)/1.02 var(--head);letter-spacing:-0.02em}
+h1{font:800 clamp(2.6rem,6vw,4.4rem)/1.02 var(--head);letter-spacing:-.02em}
 .lede{margin-top:22px;max-width:46ch;color:var(--muted);font-size:1.15rem}
 .actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:500;text-decoration:none;border:2px solid var(--ink)}
 .btn.primary{background:var(--ink);color:var(--paper)}
-.btn.primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn.primary:hover{background:var(--teal);border-color:var(--teal);color:#fff}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 
-/* oscilloscope (the one bold element) */
 .scope{background:var(--scope);border-radius:14px;padding:18px;color:#CFE6E0;box-shadow:0 0 0 6px var(--ink)}
 .scope canvas{display:block;width:100%;aspect-ratio:10/8;border-radius:6px;background:#06151e}
 .controls{display:grid;gap:12px;margin-top:16px}
@@ -49,9 +57,8 @@ h1{font:800 clamp(2.6rem,6vw,4.4rem)/1.02 var(--head);letter-spacing:-0.02em}
 input[type=range]{width:100%;accent-color:var(--gold)}
 .scope small{display:block;margin-top:12px;color:#8FB0A8;font-size:.82rem}
 
-/* sections */
 section{padding:72px 0;border-top:1px solid var(--line)}
-h2{font:800 clamp(1.8rem,3.5vw,2.4rem)/1.1 var(--head);letter-spacing:-0.01em;margin-bottom:34px}
+h2{font:800 clamp(1.8rem,3.5vw,2.4rem)/1.1 var(--head);letter-spacing:-.01em;margin-bottom:34px}
 .projects{list-style:none}
 .project{display:grid;grid-template-columns:1fr 2fr;gap:12px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
 .project:first-child{padding-top:0}
@@ -63,19 +70,42 @@ h2{font:800 clamp(1.8rem,3.5vw,2.4rem)/1.1 var(--head);letter-spacing:-0.01em;ma
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
 .skills h3{font:500 1.15rem var(--head);margin-bottom:6px}
 .skills p{color:var(--muted)}
-.about{max-width:62ch}
+
+.about{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
+.photo{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--teal);display:grid;place-items:center;color:#fff;font:800 4rem var(--head)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about p{max-width:62ch}
 .about p+p{margin-top:16px}
+.facts{margin-top:24px;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:.98rem}
+.facts dt{color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.gallery figure{margin:0;cursor:zoom-in}
+.gallery .frame{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--line);display:grid;place-items:center;color:var(--muted);font-size:.85rem}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.gal-label{grid-column:1/-1;font:500 1.15rem var(--head);margin-top:12px}
+dialog#lightbox{border:none;border-radius:12px;padding:12px;max-width:min(92vw,900px);background:var(--paper);color:var(--ink)}
+dialog#lightbox::backdrop{background:rgba(0,0,0,.75)}
+dialog#lightbox img{display:block;max-width:100%;max-height:75vh;margin:0 auto;border-radius:8px}
+dialog#lightbox p{margin:10px 4px 6px;color:var(--muted);font-size:.95rem}
+dialog#lightbox button{font:500 .95rem var(--body);background:var(--ink);color:var(--paper);border:0;border-radius:6px;padding:6px 16px;cursor:pointer}
 .contact p{max-width:52ch;color:var(--muted);margin-bottom:24px}
 footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
 @media (max-width:860px){
   .hero{padding:48px 0 56px}
   .hero .wrap{grid-template-columns:1fr;gap:40px}
-  .project{grid-template-columns:1fr}
+  .project,.about{grid-template-columns:1fr}
+  .about{gap:28px}.photo{max-width:240px}
   .skills{grid-template-columns:1fr}
 }
 @media (max-width:480px){
-  .controls label{grid-template-columns:1fr 64px;}
+  .controls label{grid-template-columns:1fr 64px}
   .controls label span{grid-column:1/-1}
 }
 </style>
@@ -84,12 +114,14 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">James Asante</a>
+    <a class="brand" href="#top">Asante James</a>
     <nav aria-label="Main">
       <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Switch between light and dark mode">Dark</button>
     </nav>
   </div>
 </header>
@@ -99,15 +131,14 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
     <div class="wrap">
       <div>
         <h1>I design circuits and the systems around them.</h1>
-        <p class="lede">Electrical and Electronic Engineering student at the University of Mines and Technology, Tarkwa. I like power electronics, control, and getting hardware to behave.</p>
+        <p class="lede">Electrical and Electronic Engineering student at the University of Mines and Technology, Tarkwa. I like power electronics, power systems, and getting hardware to behave.</p>
         <div class="actions">
           <a class="btn primary" href="#projects">See my projects</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="resume.pdf" download>Download resume</a>
         </div>
       </div>
-
       <div class="scope" role="group" aria-label="Interactive oscilloscope">
-        <canvas id="scope" width="800" height="640" aria-label="Sine wave on an oscilloscope screen" role="img"></canvas>
+        <canvas id="scope" width="800" height="640" role="img" aria-label="Sine wave on an oscilloscope screen"></canvas>
         <div class="controls">
           <label for="freq"><span>Frequency</span>
             <input id="freq" type="range" min="1" max="20" step="1" value="5">
@@ -123,38 +154,61 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 
   <section id="projects">
     <div class="wrap">
-      <h2>Projects</h2>
-      <!-- Replace each project below with your own work -->
+      <h2 class="reveal">Projects</h2>
+      <!-- EDIT ME: add results, photos or links to each project when you have them -->
       <ul class="projects">
-        <li class="project">
-          <div><h3>Variable DC power supply</h3><p class="meta">Course project, 2026</p></div>
+        <li class="project reveal">
+          <div><h3>Power device treasure hunt</h3><p class="meta">Power Electronics (EL 377)</p></div>
           <div>
-            <p>A bench supply with an adjustable 0 to 24 V output and current limiting. I designed the rectifier, the regulator stage, and tested ripple under load.</p>
-            <ul class="tags"><li>Power electronics</li><li>Analog design</li><li>Testing</li></ul>
+            <p>Recovered a power transistor from a discarded Denon MiniDisc recorder and identified it from its markings: the part code, terminals, ratings and what it does inside the equipment.</p>
+            <ul class="tags"><li>Power semiconductors</li><li>Datasheets</li><li>Hardware teardown</li></ul>
           </div>
         </li>
-        <li class="project">
-          <div><h3>Substation visit report</h3><p class="meta">Field trip, 2026</p></div>
+        <li class="project reveal">
+          <div><h3>GRIDCo substation field report</h3><p class="meta">Field trip, Takoradi</p></div>
           <div>
-            <p>A written study of how a transmission substation is laid out, from the switchyard to the control room, with notes on protection and switching.</p>
-            <ul class="tags"><li>Power systems</li><li>Technical writing</li></ul>
+            <p>Visited the GRIDCo substation in Takoradi, toured the switchyard and control room, and wrote up how the station is laid out and operated.</p>
+            <ul class="tags"><li>Power systems</li><li>Substations</li><li>Technical writing</li></ul>
           </div>
         </li>
-        <li class="project">
-          <div><h3>Tic-tac-toe that cannot lose</h3><p class="meta">Personal project, 2026</p></div>
+        <li class="project reveal">
+          <div><h3>Adversarial search: Minimax</h3><p class="meta">Problem Solving Agents</p></div>
           <div>
-            <p>A game opponent built with Minimax and alpha-beta pruning, written to understand how search algorithms decide between moves.</p>
-            <ul class="tags"><li>Python</li><li>Algorithms</li></ul>
+            <p>Studied how Minimax and alpha-beta pruning let an agent choose moves in competitive settings, and how the same ideas apply to engineering decisions.</p>
+            <ul class="tags"><li>Algorithms</li><li>AI</li><li>Python</li></ul>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
+  <section id="gallery">
+    <div class="wrap">
+      <h2 class="reveal">Gallery</h2>
+      <!-- EDIT ME: save photos in a folder named photos with these exact file names; change the captions here -->
+      <div class="gallery reveal">
+        <p class="gal-label">Working on projects</p>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/project-1.jpg" alt="Odehye working on a project in the lab" loading="lazy" onerror="this.remove()"></div><figcaption>Working on a project in the lab</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/project-2.jpg" alt="Odehye testing a circuit on the bench" loading="lazy" onerror="this.remove()"></div><figcaption>Testing a circuit on the bench</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/project-3.jpg" alt="Odehye examining electronic components" loading="lazy" onerror="this.remove()"></div><figcaption>Examining components</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/project-4.jpg" alt="Odehye working with a teammate on a project" loading="lazy" onerror="this.remove()"></div><figcaption>Working with a teammate</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/project-5.jpg" alt="Odehye presenting a finished project" loading="lazy" onerror="this.remove()"></div><figcaption>Presenting a finished project</figcaption></figure>
+        <p class="gal-label">On field trips</p>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/fieldtrip-1.jpg" alt="Odehye walking through the GRIDCo switchyard" loading="lazy" onerror="this.remove()"></div><figcaption>Walking through the switchyard</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/fieldtrip-2.jpg" alt="Odehye at the GRIDCo control room" loading="lazy" onerror="this.remove()"></div><figcaption>At the control room</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/fieldtrip-3.jpg" alt="Odehye with classmates on the field trip" loading="lazy" onerror="this.remove()"></div><figcaption>With classmates on the trip</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/fieldtrip-4.jpg" alt="Odehye looking at equipment during the field trip" loading="lazy" onerror="this.remove()"></div><figcaption>Looking at equipment on site</figcaption></figure>
+        <figure><div class="frame"><span>Photo coming soon</span><img src="photos/fieldtrip-5.jpg" alt="Odehye taking notes during the field trip" loading="lazy" onerror="this.remove()"></div><figcaption>Taking notes on the trip</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="lightbox"><img alt=""><p></p><button type="button">Close</button></dialog>
+
   <section id="skills">
     <div class="wrap">
-      <h2>Skills</h2>
-      <div class="skills">
+      <h2 class="reveal">Skills</h2>
+      <div class="skills reveal">
         <div><h3>Circuits and electronics</h3><p>Analog and digital circuit analysis, power devices, and bench testing.</p></div>
         <div><h3>Mathematics for engineering</h3><p>Applied mathematics, signals, and modelling of physical systems.</p></div>
         <div><h3>Programming</h3><p>Python for simulation and problem solving, plus HTML, CSS and JavaScript.</p></div>
@@ -165,102 +219,124 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 
   <section id="about">
     <div class="wrap">
-      <h2>About</h2>
-      <div class="about">
-        <p>I study Electrical and Electronic Engineering at UMaT in Tarkwa, where my coursework covers electronics, applied mathematics, and the engineering sciences behind them.</p>
-        <p>I learn best by building, so I turn most topics into something I can run, measure, or break. Write a sentence or two here about what you want to do next.</p>
+      <h2 class="reveal">About</h2>
+      <div class="about reveal">
+        <!-- EDIT ME: save your picture as photo.jpg in the same folder; until then initials show -->
+        <div class="photo"><span aria-hidden="true">OJ</span><img src="photo.jpg" alt="Portrait of Odehye James" onerror="this.remove()"></div>
+        <div>
+          <p>I study Electrical and Electronic Engineering at UMaT in Tarkwa. My coursework covers electronics, applied mathematics and the engineering sciences behind them.</p>
+          <p>I learn best by building, so I turn most topics into something I can run, measure, or open up and examine. EDIT ME: I want to be working on integrating Super Intelligenct modules in our various Electrical and Electronics System.</p>
+          <dl class="facts">
+            <dt>University</dt><dd>University of Mines and Technology (UMaT)</dd>
+            <dt>Department</dt><dd>Electrical and Electronic Engineering</dd>
+            <dt>Based in</dt><dd>Tarkwa, Ghana</dd>
+            <dt>Interests</dt><dd>Power electronics, power systems, embedded systems</dd>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2>Contact</h2>
-      <p>Open to internships, collaborations, and project work. Send a short message about what you have in mind.</p>
-      <a class="btn primary" href="mailto:jamesasante2004@gmail.com">Email me</a>
+      <h2 class="reveal">Contact</h2>
+      <p class="reveal">Open to internships, collaborations, and project work. Send a short message about what you have in mind.</p>
+      <div class="actions reveal">
+        <a class="btn primary" href="mailto:jamesasante2004@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://github.com/jamesasante2004-afk" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/james-asante" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="Asante James.pdf" download>Resume</a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">&copy; <span id="year"></span> Odehye James. University of Mines and Technology, Tarkwa.</div>
-</footer>
+<footer><div class="wrap">&copy; <span id="year"></span> Odehye James. University of Mines and Technology, Tarkwa.</div></footer>
 
 <script>
 (function () {
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('theme');
+  function label() { themeBtn.textContent = root.dataset.theme === 'dark' ? 'Light' : 'Dark'; }
+  label();
+  themeBtn.addEventListener('click', function () {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    label();
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // scroll reveal
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('in'); }); }
+
+  // lightbox
+  const box = document.getElementById('lightbox');
+  document.querySelectorAll('.gallery figure').forEach(function (f) {
+    f.addEventListener('click', function () {
+      const img = f.querySelector('img');
+      if (!img) return;
+      box.querySelector('img').src = img.src;
+      box.querySelector('img').alt = img.alt;
+      box.querySelector('p').textContent = f.querySelector('figcaption').textContent;
+      box.showModal();
+    });
+  });
+  box.addEventListener('click', function (e) { if (e.target === box || e.target.tagName === 'BUTTON') box.close(); });
+
+  // oscilloscope
   const canvas = document.getElementById('scope');
   const ctx = canvas.getContext('2d');
   const freq = document.getElementById('freq');
   const amp = document.getElementById('amp');
   const freqOut = document.getElementById('freqOut');
   const ampOut = document.getElementById('ampOut');
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let phase = 0;
 
-  document.getElementById('year').textContent = new Date().getFullYear();
-
   function resize() {
-    const r = canvas.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
+    const r = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     canvas.width = Math.round(r.width * dpr);
     canvas.height = Math.round(r.height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     draw();
   }
-
   function draw() {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     ctx.clearRect(0, 0, w, h);
-
-    // grid: 10 x 8 divisions
     ctx.lineWidth = 1;
     ctx.strokeStyle = 'rgba(124,240,200,0.16)';
     ctx.beginPath();
-    for (let i = 0; i <= 10; i++) { const x = (w / 10) * i; ctx.moveTo(x, 0); ctx.lineTo(x, h); }
-    for (let j = 0; j <= 8; j++) { const y = (h / 8) * j; ctx.moveTo(0, y); ctx.lineTo(w, y); }
+    for (let i = 0; i <= 10; i++) { const x = w / 10 * i; ctx.moveTo(x, 0); ctx.lineTo(x, h); }
+    for (let j = 0; j <= 8; j++) { const y = h / 8 * j; ctx.moveTo(0, y); ctx.lineTo(w, y); }
     ctx.stroke();
     ctx.strokeStyle = 'rgba(124,240,200,0.38)';
-    ctx.beginPath();
-    ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2);
-    ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h);
-    ctx.stroke();
-
-    // trace: the screen spans 100 ms, so cycles on screen = frequency / 10
-    const cycles = Number(freq.value);
-    const peak = Number(amp.value);
-    const pxPerVolt = h / 8;
-    ctx.lineWidth = 2.5;
-    ctx.lineJoin = 'round';
-    ctx.strokeStyle = '#7CF0C8';
-    ctx.shadowColor = '#7CF0C8';
-    ctx.shadowBlur = 8;
+    ctx.beginPath(); ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2); ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h); ctx.stroke();
+    const cycles = Number(freq.value), peak = Number(amp.value), pxV = h / 8;
+    ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#7CF0C8'; ctx.shadowColor = '#7CF0C8'; ctx.shadowBlur = 8;
     ctx.beginPath();
     for (let x = 0; x <= w; x += 2) {
-      const t = x / w;
-      const y = h / 2 - peak * pxPerVolt * Math.sin(2 * Math.PI * cycles * t + phase);
+      const y = h / 2 - peak * pxV * Math.sin(2 * Math.PI * cycles * (x / w) + phase);
       x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
     }
-    ctx.stroke();
-    ctx.shadowBlur = 0;
+    ctx.stroke(); ctx.shadowBlur = 0;
   }
-
   function readouts() {
     freqOut.textContent = (Number(freq.value) * 10) + ' Hz';
     ampOut.textContent = (Number(amp.value) * 2).toFixed(1) + ' Vpp';
     draw();
   }
-
-  function loop() {
-    phase -= 0.04;
-    draw();
-    requestAnimationFrame(loop);
-  }
-
+  function loop() { phase -= 0.04; draw(); requestAnimationFrame(loop); }
   freq.addEventListener('input', readouts);
   amp.addEventListener('input', readouts);
   window.addEventListener('resize', resize);
-  resize();
-  readouts();
+  resize(); readouts();
   if (!reduce) requestAnimationFrame(loop);
 })();
 </script>
